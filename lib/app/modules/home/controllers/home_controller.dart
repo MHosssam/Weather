@@ -22,6 +22,7 @@ class HomeController extends GetxController with BusyMixin {
     try {
       startBusy();
       final _url = '${DioHelperService.to.baseUrl}/weather?';
+      // dio.options.headers['Content-Type'] = 'application/json';
       final data = await DioHelperService.to.getData(
         url: _url,
         query: {
@@ -48,6 +49,7 @@ class HomeController extends GetxController with BusyMixin {
     try {
       startBusy();
       final _url = '${DioHelperService.to.baseUrl}/weather?';
+      // dio.options.headers['Content-Type'] = 'application/json';
       for (var c in cities) {
         final data = DioHelperService.to.getData(
           url: _url,
@@ -74,6 +76,7 @@ class HomeController extends GetxController with BusyMixin {
       startBusy();
 
       final _url = '${DioHelperService.to.baseUrl}/forecast?';
+      // dio.options.headers['Content-Type'] = 'application/json';
       final data = await DioHelperService.to.getData(
         url: _url,
         query: {
